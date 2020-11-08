@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet3" targetNamespace="http://tempuri.org/DataSet3.xsd" xmlns:mstns="http://tempuri.org/DataSet3.xsd" xmlns="http://tempuri.org/DataSet3.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="MainConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="MainConnectionString (Settings)" PropertyReference="ApplicationSettings.Danilov_library.Properties.Settings.GlobalReference.Default.MainConnectionString" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="todayBooksTableAdapter" GeneratorDataComponentClassName="todayBooksTableAdapter" Name="todayBooks" UserDataComponentName="todayBooksTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MainConnectionString (Settings)" DbObjectName="library_danilov.dbo.todayBooks" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT "Книга", "Студент", "Дата возврата" FROM "dbo"."todayBooks"</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Книга" DataSetColumn="Книга" />
+              <Mapping SourceColumn="Студент" DataSetColumn="Студент" />
+              <Mapping SourceColumn="Дата возврата" DataSetColumn="Дата возврата" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="overdueBooksTableAdapter" GeneratorDataComponentClassName="overdueBooksTableAdapter" Name="overdueBooks" UserDataComponentName="overdueBooksTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MainConnectionString (Settings)" DbObjectName="library_danilov.dbo.overdueBooks" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT overdueBooks.*
+FROM     overdueBooks</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Книга" DataSetColumn="Книга" />
+              <Mapping SourceColumn="Студент" DataSetColumn="Студент" />
+              <Mapping SourceColumn="Дата возврата" DataSetColumn="Дата возврата" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet3" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSet3" msprop:Generator_UserDSName="DataSet3">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="todayBooks" msprop:Generator_TableClassName="todayBooksDataTable" msprop:Generator_TableVarName="tabletodayBooks" msprop:Generator_RowChangedName="todayBooksRowChanged" msprop:Generator_TablePropName="todayBooks" msprop:Generator_RowDeletingName="todayBooksRowDeleting" msprop:Generator_RowChangingName="todayBooksRowChanging" msprop:Generator_RowEvHandlerName="todayBooksRowChangeEventHandler" msprop:Generator_RowDeletedName="todayBooksRowDeleted" msprop:Generator_RowClassName="todayBooksRow" msprop:Generator_UserTableName="todayBooks" msprop:Generator_RowEvArgName="todayBooksRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Книга" msprop:Generator_ColumnVarNameInTable="columnКнига" msprop:Generator_ColumnPropNameInRow="Книга" msprop:Generator_ColumnPropNameInTable="КнигаColumn" msprop:Generator_UserColumnName="Книга" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Студент" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnСтудент" msprop:Generator_ColumnPropNameInRow="Студент" msprop:Generator_ColumnPropNameInTable="СтудентColumn" msprop:Generator_UserColumnName="Студент" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="767" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Дата_x0020_возврата" msprop:Generator_ColumnVarNameInTable="columnДата_возврата" msprop:Generator_ColumnPropNameInRow="Дата_возврата" msprop:Generator_ColumnPropNameInTable="Дата_возвратаColumn" msprop:Generator_UserColumnName="Дата возврата" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="overdueBooks" msprop:Generator_TableClassName="overdueBooksDataTable" msprop:Generator_TableVarName="tableoverdueBooks" msprop:Generator_TablePropName="overdueBooks" msprop:Generator_RowDeletingName="overdueBooksRowDeleting" msprop:Generator_RowChangingName="overdueBooksRowChanging" msprop:Generator_RowEvHandlerName="overdueBooksRowChangeEventHandler" msprop:Generator_RowDeletedName="overdueBooksRowDeleted" msprop:Generator_UserTableName="overdueBooks" msprop:Generator_RowChangedName="overdueBooksRowChanged" msprop:Generator_RowEvArgName="overdueBooksRowChangeEvent" msprop:Generator_RowClassName="overdueBooksRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Книга" msprop:Generator_ColumnVarNameInTable="columnКнига" msprop:Generator_ColumnPropNameInRow="Книга" msprop:Generator_ColumnPropNameInTable="КнигаColumn" msprop:Generator_UserColumnName="Книга" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Студент" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnСтудент" msprop:Generator_ColumnPropNameInRow="Студент" msprop:Generator_ColumnPropNameInTable="СтудентColumn" msprop:Generator_UserColumnName="Студент" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="767" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Дата_x0020_возврата" msprop:Generator_ColumnVarNameInTable="columnДата_возврата" msprop:Generator_ColumnPropNameInRow="Дата_возврата" msprop:Generator_ColumnPropNameInTable="Дата_возвратаColumn" msprop:Generator_UserColumnName="Дата возврата" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
