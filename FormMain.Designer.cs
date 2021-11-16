@@ -57,10 +57,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 7);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 13);
+            this.label1.Size = new System.Drawing.Size(156, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Книги к сдаче сегодня";
             // 
@@ -77,13 +76,13 @@
             this.студентDataGridViewTextBoxColumn,
             this.датаВозвратаDataGridViewTextBoxColumn});
             this.dgv_todayReturns.DataSource = this.todayBooksBindingSource1;
-            this.dgv_todayReturns.Location = new System.Drawing.Point(9, 34);
-            this.dgv_todayReturns.Margin = new System.Windows.Forms.Padding(2);
+            this.dgv_todayReturns.Location = new System.Drawing.Point(12, 42);
+            this.dgv_todayReturns.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_todayReturns.Name = "dgv_todayReturns";
             this.dgv_todayReturns.ReadOnly = true;
             this.dgv_todayReturns.RowHeadersWidth = 51;
             this.dgv_todayReturns.RowTemplate.Height = 24;
-            this.dgv_todayReturns.Size = new System.Drawing.Size(456, 234);
+            this.dgv_todayReturns.Size = new System.Drawing.Size(608, 288);
             this.dgv_todayReturns.TabIndex = 1;
             // 
             // книгаDataGridViewTextBoxColumn
@@ -113,7 +112,7 @@
             this.датаВозвратаDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.датаВозвратаDataGridViewTextBoxColumn.Name = "датаВозвратаDataGridViewTextBoxColumn";
             this.датаВозвратаDataGridViewTextBoxColumn.ReadOnly = true;
-            this.датаВозвратаDataGridViewTextBoxColumn.Width = 99;
+            this.датаВозвратаDataGridViewTextBoxColumn.Width = 124;
             // 
             // todayBooksBindingSource1
             // 
@@ -128,10 +127,9 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(470, 7);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(627, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 13);
+            this.label2.Size = new System.Drawing.Size(147, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "Просроченные книги";
             // 
@@ -148,12 +146,12 @@
             this.студентDataGridViewTextBoxColumn1,
             this.датаВозвратаDataGridViewTextBoxColumn1});
             this.dgv_overdue.DataSource = this.overdueBooksBindingSource;
-            this.dgv_overdue.Location = new System.Drawing.Point(472, 34);
-            this.dgv_overdue.Margin = new System.Windows.Forms.Padding(2);
+            this.dgv_overdue.Location = new System.Drawing.Point(685, 42);
+            this.dgv_overdue.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_overdue.Name = "dgv_overdue";
             this.dgv_overdue.ReadOnly = true;
             this.dgv_overdue.RowHeadersWidth = 51;
-            this.dgv_overdue.Size = new System.Drawing.Size(522, 234);
+            this.dgv_overdue.Size = new System.Drawing.Size(696, 288);
             this.dgv_overdue.TabIndex = 1;
             // 
             // книгаDataGridViewTextBoxColumn1
@@ -164,7 +162,7 @@
             this.книгаDataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.книгаDataGridViewTextBoxColumn1.Name = "книгаDataGridViewTextBoxColumn1";
             this.книгаDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.книгаDataGridViewTextBoxColumn1.Width = 62;
+            this.книгаDataGridViewTextBoxColumn1.Width = 75;
             // 
             // студентDataGridViewTextBoxColumn1
             // 
@@ -174,7 +172,7 @@
             this.студентDataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.студентDataGridViewTextBoxColumn1.Name = "студентDataGridViewTextBoxColumn1";
             this.студентDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.студентDataGridViewTextBoxColumn1.Width = 72;
+            this.студентDataGridViewTextBoxColumn1.Width = 91;
             // 
             // датаВозвратаDataGridViewTextBoxColumn1
             // 
@@ -184,7 +182,7 @@
             this.датаВозвратаDataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.датаВозвратаDataGridViewTextBoxColumn1.Name = "датаВозвратаDataGridViewTextBoxColumn1";
             this.датаВозвратаDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.датаВозвратаDataGridViewTextBoxColumn1.Width = 99;
+            this.датаВозвратаDataGridViewTextBoxColumn1.Width = 124;
             // 
             // overdueBooksBindingSource
             // 
@@ -194,10 +192,10 @@
             // bt_readerEdit
             // 
             this.bt_readerEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.bt_readerEdit.Location = new System.Drawing.Point(318, 273);
-            this.bt_readerEdit.Margin = new System.Windows.Forms.Padding(2);
+            this.bt_readerEdit.Location = new System.Drawing.Point(424, 336);
+            this.bt_readerEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_readerEdit.Name = "bt_readerEdit";
-            this.bt_readerEdit.Size = new System.Drawing.Size(278, 29);
+            this.bt_readerEdit.Size = new System.Drawing.Size(371, 36);
             this.bt_readerEdit.TabIndex = 2;
             this.bt_readerEdit.Text = "Добавление читательского билета";
             this.bt_readerEdit.UseVisualStyleBackColor = true;
@@ -206,10 +204,10 @@
             // bt_bookOper
             // 
             this.bt_bookOper.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.bt_bookOper.Location = new System.Drawing.Point(318, 333);
-            this.bt_bookOper.Margin = new System.Windows.Forms.Padding(2);
+            this.bt_bookOper.Location = new System.Drawing.Point(424, 410);
+            this.bt_bookOper.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_bookOper.Name = "bt_bookOper";
-            this.bt_bookOper.Size = new System.Drawing.Size(278, 27);
+            this.bt_bookOper.Size = new System.Drawing.Size(371, 33);
             this.bt_bookOper.TabIndex = 3;
             this.bt_bookOper.Text = "Сдача/выдача книг";
             this.bt_bookOper.UseVisualStyleBackColor = true;
@@ -218,10 +216,10 @@
             // bt_bookEdit
             // 
             this.bt_bookEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.bt_bookEdit.Location = new System.Drawing.Point(318, 305);
-            this.bt_bookEdit.Margin = new System.Windows.Forms.Padding(2);
+            this.bt_bookEdit.Location = new System.Drawing.Point(424, 375);
+            this.bt_bookEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_bookEdit.Name = "bt_bookEdit";
-            this.bt_bookEdit.Size = new System.Drawing.Size(278, 24);
+            this.bt_bookEdit.Size = new System.Drawing.Size(371, 30);
             this.bt_bookEdit.TabIndex = 4;
             this.bt_bookEdit.Text = "Добавление книги";
             this.bt_bookEdit.UseVisualStyleBackColor = true;
@@ -237,9 +235,9 @@
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1031, 362);
+            this.ClientSize = new System.Drawing.Size(1375, 446);
             this.Controls.Add(this.bt_bookEdit);
             this.Controls.Add(this.bt_bookOper);
             this.Controls.Add(this.bt_readerEdit);
@@ -247,7 +245,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgv_todayReturns);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormMain";
             this.Text = "Основное меню";
             this.Load += new System.EventHandler(this.FormMain_Load);
