@@ -59,5 +59,10 @@ namespace Danilov_library
                 bt_enter.Enabled = true;
             else bt_enter.Enabled = false;
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

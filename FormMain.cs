@@ -62,5 +62,12 @@ namespace Danilov_library
             BookGivaTakeForm bf = new BookGivaTakeForm(mask);
             bf.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ReservCode rf = new ReservCode();
+            rf.Show();
+
+        }
     }
 }

@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Danilov_library
 {
-    public partial class Form6 : Form
+    public partial class FormGiven : Form
     {
-        public Form6()
+        public FormGiven()
         {
             InitializeComponent();
+        }
+
+        private void Form6_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

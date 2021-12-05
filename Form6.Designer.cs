@@ -1,6 +1,6 @@
 ﻿namespace Danilov_library
 {
-    partial class Form6
+    partial class FormGiven
     {
         /// <summary>
         /// Required designer variable.
@@ -63,7 +63,7 @@
             this.button1.Text = "Закрыть";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // Form6
+            // FormGiven
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -71,8 +71,9 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
-            this.Name = "Form6";
+            this.Name = "FormGiven";
             this.Text = "Общие сведения";
+            this.Load += new System.EventHandler(this.Form6_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

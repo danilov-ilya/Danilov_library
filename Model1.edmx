@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Хранилище library_danilovModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="books">
+          <Key>
+            <PropertyRef Name="isbn" />
+          </Key>
+          <Property Name="isbn" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="author" Type="varchar" MaxLength="255" />
+          <Property Name="title" Type="varchar" MaxLength="255" />
+          <Property Name="publish_year" Type="date" />
+          <Property Name="genre_id" Type="int" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="books_reserved">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="book_id" Type="int" Nullable="false" />
+          <Property Name="student_id" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="reserv_ends" Type="datetime" Nullable="false" />
+          <Property Name="taken" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="students">
+          <Key>
+            <PropertyRef Name="lib_card_number" />
+          </Key>
+          <Property Name="lib_card_number" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="stud_card_number" Type="varchar" MaxLength="255" />
+          <Property Name="first_name" Type="varchar" MaxLength="255" />
+          <Property Name="middle_name" Type="varchar" MaxLength="255" />
+          <Property Name="last_name" Type="varchar" MaxLength="255" />
+          <Property Name="group_id" Type="int" />
+          <Property Name="birth_date" Type="date" />
+        </EntityType>
+        <EntityContainer Name="Хранилище library_danilovModelContainer">
+          <EntitySet Name="books" EntityType="Self.books" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="books_reserved" EntityType="Self.books_reserved" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="students" EntityType="Self.students" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="library_danilovModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="books_reserved">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="book_id" Type="Int32" Nullable="false" />
+          <Property Name="student_id" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="reserv_ends" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="taken" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="library_danilovEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="books_reserved" EntityType="Self.books_reserved" />
+          <EntitySet Name="students" EntityType="library_danilovModel.students" />
+          <EntitySet Name="books" EntityType="library_danilovModel.books" />
+        </EntityContainer>
+        <EntityType Name="students">
+          <Key>
+            <PropertyRef Name="lib_card_number" />
+          </Key>
+          <Property Name="lib_card_number" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="stud_card_number" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="first_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="middle_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="last_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="group_id" Type="Int32" />
+          <Property Name="birth_date" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="books">
+          <Key>
+            <PropertyRef Name="isbn" />
+          </Key>
+          <Property Name="isbn" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="author" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="publish_year" Type="DateTime" Precision="0" />
+          <Property Name="genre_id" Type="Int32" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище library_danilovModelContainer" CdmEntityContainer="library_danilovEntities">
+          <EntitySetMapping Name="books_reserved">
+            <EntityTypeMapping TypeName="library_danilovModel.books_reserved">
+              <MappingFragment StoreEntitySet="books_reserved">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="book_id" ColumnName="book_id" />
+                <ScalarProperty Name="student_id" ColumnName="student_id" />
+                <ScalarProperty Name="reserv_ends" ColumnName="reserv_ends" />
+                <ScalarProperty Name="taken" ColumnName="taken" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="students">
+            <EntityTypeMapping TypeName="library_danilovModel.students">
+              <MappingFragment StoreEntitySet="students">
+                <ScalarProperty Name="birth_date" ColumnName="birth_date" />
+                <ScalarProperty Name="group_id" ColumnName="group_id" />
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
+                <ScalarProperty Name="middle_name" ColumnName="middle_name" />
+                <ScalarProperty Name="first_name" ColumnName="first_name" />
+                <ScalarProperty Name="stud_card_number" ColumnName="stud_card_number" />
+                <ScalarProperty Name="lib_card_number" ColumnName="lib_card_number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="books">
+            <EntityTypeMapping TypeName="library_danilovModel.books">
+              <MappingFragment StoreEntitySet="books">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="genre_id" ColumnName="genre_id" />
+                <ScalarProperty Name="publish_year" ColumnName="publish_year" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="author" ColumnName="author" />
+                <ScalarProperty Name="isbn" ColumnName="isbn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
