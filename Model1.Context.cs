@@ -25,8 +25,8 @@ namespace Danilov_library
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<books_reserved> books_reserved { get; set; }
         public virtual DbSet<students> students { get; set; }
         public virtual DbSet<books> books { get; set; }
+        public virtual DbSet<books_reserved> books_reserved { get; set; }
     }
 }

@@ -14,14 +14,19 @@ namespace Danilov_library
     public partial class BookGivaTakeForm : Form
     {
         string studID;
+        string book_isbn;
         int bookId;
+        library_danilovEntities db;
+        
         public BookGivaTakeForm(byte accessMask)
         {
             InitializeComponent();
+            db = new library_danilovEntities();
             bt_give.Enabled = ((accessMask & 0010) != 0);
             bt_take.Enabled = ((accessMask & 0001) != 0);
             studID = "";
             bookId = -1;
+            book_isbn = "";
         }
 
         private void bt_studSearch_Click(object sender, EventArgs e)
@@ -46,6 +51,7 @@ namespace Danilov_library
                 tbBookTitle.Text = sb.pTitle;
                 tb_bookYear.Text = sb.pYear;
                 bookId = sb.pBookID;
+                book_isbn = sb.pIsbn;
             }
         }
 
@@ -80,6 +86,16 @@ namespace Danilov_library
                         if (res1 > 0 && res2 > 0)
                         {
                             MessageBox.Show("Книга выдана успешно");
+                        }
+                        List<books_reserved> all_reserves = db.books_reserved.ToList();
+                        books_reserved cur_reserve = all_reserves.Where(rr => rr.book_id == book_isbn && rr.student_id == studID).FirstOrDefault();
+                        if (cur_reserve != null)
+                        {
+                            if(MessageBox.Show("Студент резервировал эту книгу. Закрыть его резерв?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                            {
+                                cur_reserve.taken = true;
+                                db.SaveChanges();
+                            }
                         }
                     }
                     conn.Close();

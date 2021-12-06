@@ -21,7 +21,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" Nullable="false" />
-          <Property Name="book_id" Type="int" Nullable="false" />
+          <Property Name="book_id" Type="varchar" MaxLength="255" />
           <Property Name="student_id" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="reserv_ends" Type="datetime" Nullable="false" />
           <Property Name="taken" Type="bit" Nullable="false" />
@@ -47,20 +47,10 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="library_danilovModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="books_reserved">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
-          <Property Name="book_id" Type="Int32" Nullable="false" />
-          <Property Name="student_id" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="reserv_ends" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="taken" Type="Boolean" Nullable="false" />
-        </EntityType>
         <EntityContainer Name="library_danilovEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="books_reserved" EntityType="Self.books_reserved" />
           <EntitySet Name="students" EntityType="library_danilovModel.students" />
           <EntitySet Name="books" EntityType="library_danilovModel.books" />
+          <EntitySet Name="books_reserved" EntityType="library_danilovModel.books_reserved" />
         </EntityContainer>
         <EntityType Name="students">
           <Key>
@@ -85,23 +75,22 @@
           <Property Name="genre_id" Type="Int32" />
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
+        <EntityType Name="books_reserved">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="book_id" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="student_id" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="reserv_ends" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="taken" Type="Boolean" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="Хранилище library_danilovModelContainer" CdmEntityContainer="library_danilovEntities">
-          <EntitySetMapping Name="books_reserved">
-            <EntityTypeMapping TypeName="library_danilovModel.books_reserved">
-              <MappingFragment StoreEntitySet="books_reserved">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="book_id" ColumnName="book_id" />
-                <ScalarProperty Name="student_id" ColumnName="student_id" />
-                <ScalarProperty Name="reserv_ends" ColumnName="reserv_ends" />
-                <ScalarProperty Name="taken" ColumnName="taken" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="students">
             <EntityTypeMapping TypeName="library_danilovModel.students">
               <MappingFragment StoreEntitySet="students">
@@ -124,6 +113,17 @@
                 <ScalarProperty Name="title" ColumnName="title" />
                 <ScalarProperty Name="author" ColumnName="author" />
                 <ScalarProperty Name="isbn" ColumnName="isbn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="books_reserved">
+            <EntityTypeMapping TypeName="library_danilovModel.books_reserved">
+              <MappingFragment StoreEntitySet="books_reserved">
+                <ScalarProperty Name="taken" ColumnName="taken" />
+                <ScalarProperty Name="reserv_ends" ColumnName="reserv_ends" />
+                <ScalarProperty Name="student_id" ColumnName="student_id" />
+                <ScalarProperty Name="book_id" ColumnName="book_id" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

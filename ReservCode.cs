@@ -38,15 +38,14 @@ namespace Danilov_library
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void ReservCode_Load(object sender, EventArgs e)
         {
             BookBindingSource.DataSource = db.books.ToList();
             ReaderBindingSource.DataSource = db.students.ToList();
-
-
+            
         }
 
         private void librarydanilovEntitiesBindingSource_CurrentChanged(object sender, EventArgs e)
@@ -57,6 +56,16 @@ namespace Danilov_library
         private void CB_Reader_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            books_reserved br = new books_reserved();
+            br.book_id = CB_Book.SelectedValue.ToString();
+            br.student_id = CB_Reader.SelectedValue.ToString();
+            br.reserv_ends = DateTime.Today.AddDays(3);
+            db.books_reserved.Add(br);
+            db.SaveChanges();
         }
     }
 }

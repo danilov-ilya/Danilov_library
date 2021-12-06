@@ -55,6 +55,7 @@ namespace Danilov_library
             this.button1.TabIndex = 0;
             this.button1.Text = "Резерв";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // CB_Book
             // 
@@ -76,7 +77,7 @@ namespace Danilov_library
             // CB_Reader
             // 
             this.CB_Reader.DataSource = this.ReaderBindingSource;
-            this.CB_Reader.DisplayMember = "last_name";
+            this.CB_Reader.DisplayMember = "first_name";
             this.CB_Reader.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CB_Reader.FormattingEnabled = true;
             this.CB_Reader.Location = new System.Drawing.Point(12, 29);

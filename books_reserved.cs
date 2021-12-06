@@ -15,7 +15,7 @@ namespace Danilov_library
     public partial class books_reserved
     {
         public int ID { get; set; }
-        public int book_id { get; set; }
+        public string book_id { get; set; }
         public string student_id { get; set; }
         public System.DateTime reserv_ends { get; set; }
         public bool taken { get; set; }
