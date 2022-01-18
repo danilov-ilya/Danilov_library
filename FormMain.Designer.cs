@@ -31,28 +31,28 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.dgv_todayReturns = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dgv_overdue = new System.Windows.Forms.DataGridView();
-            this.bt_readerEdit = new System.Windows.Forms.Button();
-            this.bt_bookOper = new System.Windows.Forms.Button();
-            this.bt_bookEdit = new System.Windows.Forms.Button();
-            this.книгаDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.студентDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.датаВозвратаDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.overdueBooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet3 = new Danilov_library.DataSet3();
             this.книгаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.студентDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.датаВозвратаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.todayBooksBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet3 = new Danilov_library.DataSet3();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dgv_overdue = new System.Windows.Forms.DataGridView();
+            this.книгаDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.студентDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.датаВозвратаDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.overdueBooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bt_readerEdit = new System.Windows.Forms.Button();
+            this.bt_bookOper = new System.Windows.Forms.Button();
+            this.bt_bookEdit = new System.Windows.Forms.Button();
             this.todayBooksTableAdapter1 = new Danilov_library.DataSet3TableAdapters.todayBooksTableAdapter();
             this.overdueBooksTableAdapter = new Danilov_library.DataSet3TableAdapters.overdueBooksTableAdapter();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_todayReturns)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.todayBooksBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_overdue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.overdueBooksBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.todayBooksBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -83,8 +83,47 @@
             this.dgv_todayReturns.ReadOnly = true;
             this.dgv_todayReturns.RowHeadersWidth = 51;
             this.dgv_todayReturns.RowTemplate.Height = 24;
-            this.dgv_todayReturns.Size = new System.Drawing.Size(608, 283);
+            this.dgv_todayReturns.Size = new System.Drawing.Size(608, 325);
             this.dgv_todayReturns.TabIndex = 1;
+            // 
+            // книгаDataGridViewTextBoxColumn
+            // 
+            this.книгаDataGridViewTextBoxColumn.DataPropertyName = "Книга";
+            this.книгаDataGridViewTextBoxColumn.HeaderText = "Книга";
+            this.книгаDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.книгаDataGridViewTextBoxColumn.Name = "книгаDataGridViewTextBoxColumn";
+            this.книгаDataGridViewTextBoxColumn.ReadOnly = true;
+            this.книгаDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // студентDataGridViewTextBoxColumn
+            // 
+            this.студентDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.студентDataGridViewTextBoxColumn.DataPropertyName = "Студент";
+            this.студентDataGridViewTextBoxColumn.HeaderText = "Студент";
+            this.студентDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.студентDataGridViewTextBoxColumn.Name = "студентDataGridViewTextBoxColumn";
+            this.студентDataGridViewTextBoxColumn.ReadOnly = true;
+            this.студентDataGridViewTextBoxColumn.Width = 6;
+            // 
+            // датаВозвратаDataGridViewTextBoxColumn
+            // 
+            this.датаВозвратаDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.датаВозвратаDataGridViewTextBoxColumn.DataPropertyName = "Дата возврата";
+            this.датаВозвратаDataGridViewTextBoxColumn.HeaderText = "Дата возврата";
+            this.датаВозвратаDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.датаВозвратаDataGridViewTextBoxColumn.Name = "датаВозвратаDataGridViewTextBoxColumn";
+            this.датаВозвратаDataGridViewTextBoxColumn.ReadOnly = true;
+            this.датаВозвратаDataGridViewTextBoxColumn.Width = 124;
+            // 
+            // todayBooksBindingSource1
+            // 
+            this.todayBooksBindingSource1.DataMember = "todayBooks";
+            this.todayBooksBindingSource1.DataSource = this.dataSet3;
+            // 
+            // dataSet3
+            // 
+            this.dataSet3.DataSetName = "DataSet3";
+            this.dataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label2
             // 
@@ -113,44 +152,10 @@
             this.dgv_overdue.Name = "dgv_overdue";
             this.dgv_overdue.ReadOnly = true;
             this.dgv_overdue.RowHeadersWidth = 51;
-            this.dgv_overdue.Size = new System.Drawing.Size(696, 283);
+            this.dgv_overdue.Size = new System.Drawing.Size(696, 325);
             this.dgv_overdue.TabIndex = 1;
-            // 
-            // bt_readerEdit
-            // 
-            this.bt_readerEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.bt_readerEdit.Location = new System.Drawing.Point(424, 329);
-            this.bt_readerEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bt_readerEdit.Name = "bt_readerEdit";
-            this.bt_readerEdit.Size = new System.Drawing.Size(371, 36);
-            this.bt_readerEdit.TabIndex = 2;
-            this.bt_readerEdit.Text = "Добавление читательского билета";
-            this.bt_readerEdit.UseVisualStyleBackColor = true;
-            this.bt_readerEdit.Click += new System.EventHandler(this.bt_readerEdit_Click);
-            // 
-            // bt_bookOper
-            // 
-            this.bt_bookOper.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.bt_bookOper.Location = new System.Drawing.Point(424, 403);
-            this.bt_bookOper.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bt_bookOper.Name = "bt_bookOper";
-            this.bt_bookOper.Size = new System.Drawing.Size(371, 33);
-            this.bt_bookOper.TabIndex = 3;
-            this.bt_bookOper.Text = "Сдача/выдача книг";
-            this.bt_bookOper.UseVisualStyleBackColor = true;
-            this.bt_bookOper.Click += new System.EventHandler(this.bt_bookOper_Click);
-            // 
-            // bt_bookEdit
-            // 
-            this.bt_bookEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.bt_bookEdit.Location = new System.Drawing.Point(424, 369);
-            this.bt_bookEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bt_bookEdit.Name = "bt_bookEdit";
-            this.bt_bookEdit.Size = new System.Drawing.Size(371, 30);
-            this.bt_bookEdit.TabIndex = 4;
-            this.bt_bookEdit.Text = "Добавление книги";
-            this.bt_bookEdit.UseVisualStyleBackColor = true;
-            this.bt_bookEdit.Click += new System.EventHandler(this.bt_bookEdit_Click);
+            this.dgv_overdue.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_overdue_CellContentClick);
+            this.dgv_overdue.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_overdue_CellContentDoubleClick);
             // 
             // книгаDataGridViewTextBoxColumn1
             // 
@@ -187,44 +192,41 @@
             this.overdueBooksBindingSource.DataMember = "overdueBooks";
             this.overdueBooksBindingSource.DataSource = this.dataSet3;
             // 
-            // dataSet3
+            // bt_readerEdit
             // 
-            this.dataSet3.DataSetName = "DataSet3";
-            this.dataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.bt_readerEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.bt_readerEdit.Location = new System.Drawing.Point(486, 381);
+            this.bt_readerEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bt_readerEdit.Name = "bt_readerEdit";
+            this.bt_readerEdit.Size = new System.Drawing.Size(371, 36);
+            this.bt_readerEdit.TabIndex = 2;
+            this.bt_readerEdit.Text = "Добавление читательского билета";
+            this.bt_readerEdit.UseVisualStyleBackColor = true;
+            this.bt_readerEdit.Click += new System.EventHandler(this.bt_readerEdit_Click);
             // 
-            // книгаDataGridViewTextBoxColumn
+            // bt_bookOper
             // 
-            this.книгаDataGridViewTextBoxColumn.DataPropertyName = "Книга";
-            this.книгаDataGridViewTextBoxColumn.HeaderText = "Книга";
-            this.книгаDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.книгаDataGridViewTextBoxColumn.Name = "книгаDataGridViewTextBoxColumn";
-            this.книгаDataGridViewTextBoxColumn.ReadOnly = true;
-            this.книгаDataGridViewTextBoxColumn.Width = 125;
+            this.bt_bookOper.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.bt_bookOper.Location = new System.Drawing.Point(486, 455);
+            this.bt_bookOper.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bt_bookOper.Name = "bt_bookOper";
+            this.bt_bookOper.Size = new System.Drawing.Size(371, 33);
+            this.bt_bookOper.TabIndex = 3;
+            this.bt_bookOper.Text = "Сдача/выдача книг";
+            this.bt_bookOper.UseVisualStyleBackColor = true;
+            this.bt_bookOper.Click += new System.EventHandler(this.bt_bookOper_Click);
             // 
-            // студентDataGridViewTextBoxColumn
+            // bt_bookEdit
             // 
-            this.студентDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.студентDataGridViewTextBoxColumn.DataPropertyName = "Студент";
-            this.студентDataGridViewTextBoxColumn.HeaderText = "Студент";
-            this.студентDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.студентDataGridViewTextBoxColumn.Name = "студентDataGridViewTextBoxColumn";
-            this.студентDataGridViewTextBoxColumn.ReadOnly = true;
-            this.студентDataGridViewTextBoxColumn.Width = 6;
-            // 
-            // датаВозвратаDataGridViewTextBoxColumn
-            // 
-            this.датаВозвратаDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.датаВозвратаDataGridViewTextBoxColumn.DataPropertyName = "Дата возврата";
-            this.датаВозвратаDataGridViewTextBoxColumn.HeaderText = "Дата возврата";
-            this.датаВозвратаDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.датаВозвратаDataGridViewTextBoxColumn.Name = "датаВозвратаDataGridViewTextBoxColumn";
-            this.датаВозвратаDataGridViewTextBoxColumn.ReadOnly = true;
-            this.датаВозвратаDataGridViewTextBoxColumn.Width = 124;
-            // 
-            // todayBooksBindingSource1
-            // 
-            this.todayBooksBindingSource1.DataMember = "todayBooks";
-            this.todayBooksBindingSource1.DataSource = this.dataSet3;
+            this.bt_bookEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.bt_bookEdit.Location = new System.Drawing.Point(486, 421);
+            this.bt_bookEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bt_bookEdit.Name = "bt_bookEdit";
+            this.bt_bookEdit.Size = new System.Drawing.Size(371, 30);
+            this.bt_bookEdit.TabIndex = 4;
+            this.bt_bookEdit.Text = "Добавление книги";
+            this.bt_bookEdit.UseVisualStyleBackColor = true;
+            this.bt_bookEdit.Click += new System.EventHandler(this.bt_bookEdit_Click);
             // 
             // todayBooksTableAdapter1
             // 
@@ -236,9 +238,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(424, 442);
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button1.Location = new System.Drawing.Point(486, 493);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(371, 27);
+            this.button1.Size = new System.Drawing.Size(371, 34);
             this.button1.TabIndex = 5;
             this.button1.Text = "Зарезервировать";
             this.button1.UseVisualStyleBackColor = true;
@@ -248,7 +251,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1375, 473);
+            this.ClientSize = new System.Drawing.Size(1435, 548);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.bt_bookEdit);
             this.Controls.Add(this.bt_bookOper);
@@ -262,10 +265,10 @@
             this.Text = "Основное меню";
             this.Load += new System.EventHandler(this.FormMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_todayReturns)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.todayBooksBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_overdue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.overdueBooksBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.todayBooksBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

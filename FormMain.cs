@@ -69,5 +69,15 @@ namespace Danilov_library
             rf.Show();
 
         }
+
+        private void Dgv_overdue_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Dgv_overdue_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
